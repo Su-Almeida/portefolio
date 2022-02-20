@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  border: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .menu {
+    width: 300px;
+    background-color: #f1f1f1;
+
+    @media (max-width: 768px) {
+      width: auto;
+    }
+
+    .logo {
+      display: block;
+
+      @media (max-width: 768px) {
+        text-align: center;
+        background-color: white;
+      }
+
+      > img {
+        width: 170px;
+        margin: 20px;
+      }
+    }
+
+    .linha {
+      border-top: solid 2px #b7b7b7;
+      margin-bottom: 10px;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+
+    }
+
+    .items_menu {
+      @media (max-width: 768px) {
+        display: flex;
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        padding: 14px;
+        color: inherit;
+        text-decoration: none;
+
+        @media (max-width: 768px) {
+          flex: 1;
+          justify-content: center;
+        }
+
+        &.selecionado {
+          background-color: #e3e3e3;
+        }
+
+        &:hover {
+          background-color: #e8e8e8;
+        }
+
+        img {
+          width: 35px;
+          margin-right: 10px;
+
+          @media (max-width: 768px) {
+            width: 25px;
+          }
+        }
+      }
+    }
+  }
+
+  .conteudo {
+    flex: 1;
+    overflow: auto;
+
+    .largura_maxima_botao {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    > h1 {
+      font-weight: normal;
+      font-size: 1.5em;
+
+      @media (max-width: 768px) {
+        display: none;
+
+        > span {
+          color: #b5b5b5;
+        }
+      }
+
+      h2 {
+        font-weight: normal;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+    }
+
+    &.pagina-inicial {
+
+      .largura_maxima_botao {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+          align-items: stretch;
+          padding: 30px;
+        }
+      }
+
+      .botao {
+        flex: 1;
+        margin: 15px;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+
+        .miniatura {
+          padding-bottom: 75%;
+          background-size: cover;
+          background-position: center;
+        }
+
+        &:hover .miniatura {
+          box-shadow: 0 0 10px #4a91e3;
+        }
+
+
+        p {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 40px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    &.fotografias {
+      padding: 10px 25px;
+
+      .grelha {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px;
+
+        > div {
+          width: 25%;
+          padding: 10px;
+          cursor: pointer;
+
+          @media (max-width: 768px) {
+            width: 50%;
+          }
+
+          img {
+            width: 100%;
+
+            &:hover {
+              box-shadow: 0 0 10px #4a91e3;
+            }
+          }
+        }
+      }
+    }
+
+    &.videos {
+      padding: 10px 25px;
+
+      .grelha {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px;
+
+        .imagem {
+          width: 50%;
+          padding: 10px;
+          position: relative;
+
+          @media (max-width: 768px) {
+            width: 100%;
+          }
+
+          > img {
+            width: 100%;
+
+            &:hover {
+              box-shadow: 0 0 10px #4a91e3;
+              cursor: pointer;
+            }
+          }
+
+          p {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            margin: 0;
+            color: white;
+            display: flex;
+            align-items: center;
+
+            > img {
+              margin-left: 5px;
+              margin-bottom: 2px;
+            }
+          }
+        }
+      }
+    }
+
+    &.musicas {
+      padding: 10px 25px;
+
+      .lista {
+        margin-top: 16px;
+
+        .musica {
+          display: flex;
+          align-items: center;
+          border-bottom: solid 1px #bebebe;
+          margin-bottom: 10px;
+          cursor: pointer;
+
+          > img {
+            width: 80px;
+
+            @media (max-width: 768px) {
+              width: 60px;
+
+            }
+          }
+
+          &:hover {
+            > img {
+              box-shadow: 0 0 10px #4a91e3;
+            }
+          }
+
+          .titulo_artista {
+            flex: 1;
+            padding-left: 10px;
+            padding-right: 10px;
+            align-items: center;
+
+            p {
+              margin: 0;
+            }
+
+            .titulo {
+              font-size: 1.2em;
+              font-weight: normal;
+
+              @media (max-width: 768px) {
+                font-size: 1em;
+              }
+
+              .artista {
+                margin-top: 6px;
+              }
+            }
+
+            .duracao {
+              align-self: flex-end;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
